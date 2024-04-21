@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering & Computing Careers</title>
     <link rel="stylesheet" href="styles.css">
+    <?php include 'counter.php'; ?>
 </head>
 <body>
     <a href="/" class="u-image u-logo" >  
@@ -56,14 +57,14 @@
     <main>
         <section class="engineering-section" id="engineering-section">
             <div class="container">
-                <h1>All routes lead to Engineering / Computing</h1>
-                <p>A course in Engineering could lead to these possible jobs:</p>
-                <ul>
-                    <li>Lego</li>
-                    <li>Disney / Disney Land</li>
-                    <li>Fashion Engineer</li>
-                    <li>Sports Engineer</li>
-                    <li>Food Engineer</li>
+                <h1 class="line-spacing">All routes lead to Engineering / Computing</h1>
+                <p class="line-spacing">A course in Engineering could lead to these possible jobs:</p>
+                <ul >
+                    <li class="line-spacing2">Lego</li>
+                    <li class="line-spacing2">Disney / Disney Land</li>
+                    <li class="line-spacing2">Fashion Engineer</li>
+                    <li class="line-spacing2">Sports Engineer</li>
+                    <li class="line-spacing2">Food Engineer</li>
                 </ul>
                 <div class="button-container">
                     <a href="https://www.canterbury.ac.uk/search/undergraduate-courses?cluster=acfd401e-2289-4a87-954a-b790f0e8ad6e" class="learn-more-btn" target="_blank">Learn more</a>
@@ -71,19 +72,32 @@
             </div>
         </section>
         <section class="contact-section" id="contact-section">
-            <div class="container">
+            <div class="container2">
                 <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>For more info: email at <a href="mailto:adil.imam@canterbury.ac.uk">ETD@canterbury.ac.uk</a></p>
+                    <!-- Contact Us Section -->
+                    <h3 class="line-spacing">Contact Us</h3>
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
-                <form action="https://forms.nicepagesrv.com/v2/form/process" method="POST" class="contact-form">
-                    <input type="hidden" name="siteId" value="6203373">
-                    <input type="hidden" name="pageId" value="116920345">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Message" rows="4" required></textarea>
-                    <button type="submit">Submit</button>
-                </form>
+                <div class="follow-info">
+                    <!-- Follow Us Section -->
+                    <h3 class="line-spacing3">Follow Us</h3>
+                    <p class="line-spacing">If you have more questions, please do come to our Answers Day</p>
+                    <img src="images/QRCodes.png" alt="QR Codes">
+                </div>
             </div>
         </section>
         

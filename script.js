@@ -41,3 +41,47 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Function to fetch the current visitor count from the server
+async function fetchVisitorCount() {
+    try {
+        const response = await fetch('counter.txt');
+        const count = await response.text();
+        return parseInt(count) || 0;
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        return 0;
+    }
+}
+
+// Function to update the visitor count and save it to the server
+async function updateVisitorCount(count) {
+    try {
+        await fetch('counter.txt', {
+            method: 'PUT', // Use PUT method to update the file
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            body: count.toString()
+        });
+    } catch (error) {
+        console.error('Error updating visitor count:', error);
+    }
+}
+
+// Function to initialize the visitor count when the page loads
+async function init() {
+    let visitorCount = await fetchVisitorCount();
+    document.getElementById('visitorCount').textContent = visitorCount;
+
+    // Increment the visitor count and update the display
+    visitorCount++;
+    document.getElementById('visitorCount').textContent = visitorCount;
+
+    // Update the count in the file
+    updateVisitorCount(visitorCount);
+}
+
+// Call the init function when the page loads
+window.onload = init;
+
