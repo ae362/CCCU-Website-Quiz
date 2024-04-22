@@ -1,0 +1,27 @@
+/* Add this to your styles.css */
+.quiz-wrapper {
+    text-align: center;
+}
+
+.quiz-header h1 {
+    margin-bottom: 20px;
+}
+
+.quiz-content img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.answer-section input[type="text"] {
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#return-home {
+    display: block;
+    margin: 20px auto;
+}
