@@ -68,6 +68,11 @@
         justify-content: center;
         align-items: center;
     }
+    .clickcourse{
+        color:#000000;
+        size: 20px;
+        animation: fadeColor 5s infinite;
+    }
     .quizheading{
         font-size: 100px;
         margin-bottom: 40px;
