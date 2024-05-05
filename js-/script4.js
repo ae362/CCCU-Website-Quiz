@@ -13,13 +13,24 @@ document.addEventListener('DOMContentLoaded', function () {
         correctAnswers = JSON.parse(quizContainer.getAttribute('data-answer'));
     }
     showAnswersButton.classList.remove('hidden');
+    function containsWordsFromAnswer(userAnswer, correctAnswers) {
+        userAnswer = userAnswer.toLowerCase();
+        for (let i = 0; i < correctAnswers.length; i++) {
+            const words = correctAnswers[i].toLowerCase().split(" ");
+            for (let j = 0; j < words.length; j++) {
+                if (userAnswer.includes(words[j])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     submitButton.addEventListener('click', function() {
-        const userAnswer = answerInput.value.trim().toLowerCase();
-        const normalizedAnswers = correctAnswers.map(answer => answer.toLowerCase());
+        const userAnswer = answerInput.value.trim();
         
-        // Check if the number of attempts is less than 3 before processing the attempt
         if (attempts < 3) {
-            if (normalizedAnswers.includes(userAnswer)) {
+            if (containsWordsFromAnswer(userAnswer, correctAnswers)) {
                 feedbackText.textContent = 'Correct!';
                 feedbackText.style.color = 'green';
             } else {
@@ -29,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             answerInput.value = ''; // Clear the input after submission
         } else {
-            // Notify the user they have no more attempts left
             feedbackText.textContent = 'No more attempts left.';
             feedbackText.style.color = 'red';
         }
