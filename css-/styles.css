@@ -44,7 +44,7 @@
         align-items: center; /* Vertically center content */
         display: flex;
         justify-content: center; /* Align items horizontally centered */
-        height: 200px; /* Example height of the flex container */
+        height: 150px; /* Example height of the flex container */
     }
     
     .logo img {
@@ -61,7 +61,7 @@
         animation: fadeColor 5s infinite; /* Animation duration and repetition */
         font-size: 1.8rem; 
         line-height: 1.2; 
-        margin-left: 20px;
+        margin-left: 75px;
         margin-bottom: 10px; 
     }
     
@@ -126,7 +126,7 @@
     .image-gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
+        gap: 70px;
         padding: 20px;
         max-width: 715px; 
         margin: 0 auto; 
@@ -146,11 +146,11 @@
         grid-template-columns: repeat(4, 1fr); /* 4 images per row */
         gap: 60px;
         padding: 20px;
-        max-width: 1000px; 
+        max-width: 1500px; 
         margin: 0 auto;
     }
     .quiz-container img {
-        width: 200px;
+        width: 300px;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
