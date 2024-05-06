@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Email address where you want to receive the messages
-    $to = "your_email@example.com";
+    $to = "os146@canterbury.ac.uk";
 
     // Subject of the email
     $subject = "New message from $name";
