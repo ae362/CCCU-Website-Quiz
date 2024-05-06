@@ -16,7 +16,25 @@
         100% { color: #000000; } 
         /* End color */
     }
+
+    #proceed-to-quiz {
+        background-color: #6600cc;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
     
+    #proceed-to-quiz:hover {
+        background-color: #304fff;
+    }
+
     .top-nav {
         background:linear-gradient(25deg,#f1efec,#f1efec,#304fff);
         color: #000000; /* Text color */
@@ -31,6 +49,7 @@
     
     .logo img {
         margin-right: auto;
+        margin-right: 150px;
         height: 90px;
     }
     
@@ -40,8 +59,10 @@
     }
     .text-with-outline {
         animation: fadeColor 5s infinite; /* Animation duration and repetition */
-        font-size: 45px;
-        padding-left: 40px;
+        font-size: 1.8rem; 
+        line-height: 1.2; 
+        margin-left: 20px;
+        margin-bottom: 10px; 
     }
     
     .part1{

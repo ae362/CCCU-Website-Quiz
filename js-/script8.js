@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (quizContainer) {
         correctAnswers = JSON.parse(quizContainer.getAttribute('data-answer'));
     }
-    showAnswersButton.classList.remove('hidden');
+
     function containsWordsFromAnswer(userAnswer, correctAnswers) {
         userAnswer = userAnswer.toLowerCase();
         for (let i = 0; i < correctAnswers.length; i++) {
@@ -42,16 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             feedbackText.textContent = 'No more attempts left.';
             feedbackText.style.color = 'red';
+            showAnswersButton.classList.remove('hidden'); // Show the "Show Answers" button after 3 attempts
         }
-    });
-    const quizImage = document.getElementById('quiz-image');
-    const originalQuizSrc = quizImage.src; 
-    const answerSrc = '../images/Q8.png'; 
-    showAnswersButton.addEventListener('mouseover', function() {
-        // Change the src to the answers image
-       quizImage.style.width = quizImage.offsetWidth + 'px';
-        quizImage.style.height = quizImage.offsetHeight + 'px';
-        quizImage.src = answerSrc;
     });
 
     showAnswersButton.addEventListener('mouseout', function() {
