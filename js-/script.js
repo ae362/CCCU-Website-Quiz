@@ -44,3 +44,29 @@ document.getElementById('proceed-to-quiz').addEventListener('click', function() 
 
     requestAnimationFrame(scrollToQuizSection);
 });
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Gather form data
+    const formData = new FormData(this);
+
+    // Send form data to Formspree API
+    fetch('https://formspree.io/f/xayrvkqy', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json'
+        },
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Message sent successfully!');
+        } else {
+            throw new Error('Failed to send message');
+        }
+    })
+    .catch(error => {
+        alert('An error occurred. Please try again later.');
+        console.error(error);
+    });
+});
